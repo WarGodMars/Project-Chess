@@ -14,7 +14,7 @@ int first_move=2;
     moves=V[x][y+1];
     
     if(current_posiiton=V[x][1]){
-      moves=first_moves;}
+      moves=first_move;}
 }
       
     
