@@ -51,10 +51,7 @@ public class ChessGod {
         int yf=0;
         //numero de la pregunta (estético)
         int J=1;
-        //valor para el bucle
-        boolean b=false;
         
-        int xc=0
         
         while(b<5){
             
@@ -70,17 +67,43 @@ public class ChessGod {
             
             //1-t, 2-c, 3-a, 4-D, 5-R, 6-p
             
+            //valor para el bucle
+            boolean b=false;
+            int xc=0
+            
             if (xi<8 && yi<8 && xi>=0 && yi>=0 && xf<8 && yf<8 && xf>=0 && xf>=0){
-                if (v[xi][xf]==1){
+                if (v[xi][yi]==1){
                     while (b==false){
                             if (yi==yf){
                                 while (xc=0){
                                         if (xf>xi){
-                                            for(int i=(xi+1),i>=xf, i++){
-                                                m[i][yf]=v;}
-                                            if (v=0 && i!=xf){}//se sigue el bucle
-                                            else if (v=0 && i=xf){}//se permite el movimiento
-                                            else if(v!=0){}//pieza en medio
+                                            for(int i=(xi+1); i>=xf; i++;){v[i][yf]=v;}
+                                                if (v=0 && i=xf){
+                                                    System.out.println("Movimiento realizado");
+                                                    v[xi][yi]=0;
+                                                    v[xf][yf]=1;
+                                                    b=true;}//se permite el movimiento
+                                                else if(v!=0){
+                                                    System.out.println("No se puede ya que hay una pieza en medio");
+                                                    b=true;
+                                                    xc=0;}//pieza en medio
+                                                else{}//se sigue el bucle y v=0 && i!=xf
+                                                }
+                                        else{//xi>xf
+                                            for(int i=(xi-1);,i<=xf;, i--;){v[i][yf]=v;}
+                                                if (v=0 && i=xf){
+                                                    System.out.println("Movimiento realizado");
+                                                    v[xi][yi]=0;
+                                                    v[xf][yf]=1;
+                                                    b=true;
+                                                    xc=0;}//se permite el movimiento
+                                                else if(v!=0){
+                                                    System.out.println("No se puede ya que hay una pieza en medio");
+                                                    b=true;
+                                                    xc=0;}//pieza en medio
+                                                else{}//se sigue el bucle y v=0 && i!=xf
+                                            }
+                                        
                                         }
                                     }
                                 }
